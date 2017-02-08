@@ -9,7 +9,13 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceRoot}\\server.js",
-            "cwd": "${workspaceRoot}"
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "DB_HOST": "localhost",
+                "DB_USER": "mike",
+                "DB_PASSWORD": "dummy",
+                "DB_DATABASE": "world"
+             }
         },
         {
             "type": "node",
