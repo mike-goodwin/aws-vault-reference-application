@@ -1,5 +1,6 @@
 'use  strict';
 
+var world = require('../repositories/world');
 var homeController = {};
 
 homeController.index = function (req, res) {
@@ -7,7 +8,9 @@ homeController.index = function (req, res) {
 };
 
 homeController.search = function (req, res) {
-    res.render('search', {country: req.country});
+    world.getCapital(req.body.country, function (result) {
+        res.render('search', { country: result.country, capital: result.capital });
+    });
 };
 
 module.exports = homeController;
