@@ -38,3 +38,8 @@ jspm_packages
 
 # Visual studio
 .vscode/
+
+# custom
+vault-config.cmd
+
+
