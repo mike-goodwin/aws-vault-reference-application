@@ -1,5 +1,5 @@
 # aws-vault-reference-application
-A sample Vault aware client application for the Vault defined by https://github.com/mike-goodwin/aws-vault-reference-infra.
+A sample Vault aware client application for the Vault defined by https://github.com/mike-goodwin/aws-vault-reference-infrastructure.
 
 ## prerequisites
 
