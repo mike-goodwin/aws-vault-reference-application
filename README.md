@@ -1,12 +1,13 @@
 # aws-vault-reference-application
 A sample Vault aware client application for the Vault defined by https://github.com/mike-goodwin/aws-vault-reference-infrastructure.
 
-## prerequisites
+## Prerequisites (for local development)
 
 1. Vault (quel surprise)
 2. MySQL: The reference architecture uses a [MySQL secret backend](https://www.vaultproject.io/docs/secrets/mysql)
 3. The ["world" sample MySQL database](https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html)
 3. node: This example application is a simple node application
+4. Clone this repo and install the app with `npm install`
 
 ## Setup (for local development)
 
@@ -18,7 +19,7 @@ The example application requires some environment variables:
 * `VAULT_CRED_ADDR`: The URL where the app can fetch credentials (e.g. `http://127.0.0.1:8200/v1/mysql/creds/readonly`)
 * `VAULT_LEASE`: How long the app will wait before renewing a lease, in seconds (must be less than the actual lease time (e.g. `10`)
 * `VAULT_LEASE_PADDING`: A bit of padding to prevent accidental lease expiries, in seconds (e.g. `2`)
-* `VAULT_TOKEN`: The root token that Vault generates when it starts (e.g. `85e9e183-4997-f203-0200-1f89461eae16`)
+* `VAULT_TOKEN`: The root token that Vault generates when it starts in dev mode (e.g. `85e9e183-4997-f203-0200-1f89461eae16`)
 
 To start and configure Vault in dev mode:
 
