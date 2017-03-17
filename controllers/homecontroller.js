@@ -8,12 +8,19 @@ homeController.index = function (req, res) {
 };
 
 homeController.search = function (req, res) {
-    world.getCapital(req.body.country, function (result, error) {
+
+    var country = req.body.country;
+
+    world.getCapital(country, function (result, error) {
 
         if (error) {
             req.log.error(error);
         } else {
-            res.render('search', { country: result.country, capital: result.capital });
+            if (result) {
+                res.render('search', { country: result.country, capital: result.capital });
+            } else {
+                res.render('notfound', { country: country });
+            }
         }
     });
 };

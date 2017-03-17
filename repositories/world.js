@@ -11,14 +11,14 @@ worldRepository.getCapital = function (country, cb) {
         }
 
         connection.query('select country.name as country, city.name as capital from city join country on city.ID = country.Capital where country.name = ? limit 1', [country], function (error, results, fields) {
-            
+
             connection.release();
 
             if (error) {
                 cb(null, error);
+            } else {
+                cb(results[0]);
             }
-
-            cb({ country: results[0].country, capital: results[0].capital });
         });
     });
 };
