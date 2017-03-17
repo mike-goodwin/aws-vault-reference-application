@@ -3,6 +3,7 @@
 var express = require('express');
 var csrf = require('csurf');
 var home = require('../controllers/homecontroller');
+var validator = require('../validators/countryvalidator');
 var router = express.Router();
 
 module.exports = function(app) {
@@ -14,7 +15,7 @@ module.exports = function(app) {
     router.get('/', home.index);
 
     //search for a capital
-    router.post('/search', home.search);
+    router.post('/search', validator, home.search);
     
     app.use('/', router);
 };

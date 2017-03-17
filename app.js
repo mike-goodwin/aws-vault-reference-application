@@ -20,6 +20,9 @@ try {
     //parsers
     require('./config/parsers')(app);
 
+    //validators
+    require('./config/validators')(app);
+
     //routes
     require('./config/routes')(app);
 
