@@ -4,7 +4,9 @@
   "description": "A Hashicorp Vault-aware sample application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -34,9 +36,11 @@
     "helmet": "^3.4.0",
     "mysql": "^2.13.0",
     "pug": "^2.0.0-beta11",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "debug": "^2.6.0"
-  }
+  },
+  "snyk": true
 }
